@@ -1,0 +1,10 @@
+<div class="users-container" ng-controller="UserController as vm">
+    <ul>
+        <li><a ui-sref=".create">Create user</a></li>
+        <li><a ui-sref="login">login</a></li>
+        <li><button ng-click="vm.emptySession()">CLear</button></li>
+    </ul>
+
+    <p>{{vm.users}}</p>
+</div>
+<ui-view></ui-view>

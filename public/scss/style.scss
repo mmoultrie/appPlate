@@ -1,0 +1,14 @@
+@import "variables";
+@import "reset";
+
+html, body{
+  height: 100%;
+  width: 100%;
+}
+.content-container{
+  width: 85%;
+  margin: auto;
+}
+
+@import "form";
+@import "login";

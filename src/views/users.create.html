@@ -1,0 +1,20 @@
+<div class="form-container"  ng-controller="UserCreateController as vm">
+    <form name="createUser" novalidate>
+        <div class="form-control">
+            <label for="email">username</label>
+            <input name="email"
+                   id="email"
+                   type="text"
+                   ng-model="vm.newUser.email"
+                   ng-change="vm.checkEmail(createUser,vm.newUser.email)" required>
+                   <!--ng-model-options="{updateOn: 'blur'}"-->
+        </div>
+        <div class="form-control">
+            <label for="password">password</label>
+            <input id="password" type="text" ng-model="vm.newUser.password" required >
+        </div>
+        <button ng-click="createUser.$valid && vm.createUser(vm.newUser)" >create user</button>
+    </form>
+    {{vm.newUser}}
+    {{vm.errorMsg}}
+</div>

@@ -1,0 +1,13 @@
+<div class="login-container" ng-controller="LoginController as vm">
+    <div class="form-control">
+        <label for="username">username</label>
+        <input id="username" type="text" ng-model="vm.username">
+    </div>
+    <div class="form-control">
+        <label for="password">password</label>
+        <input id="password" type="text" ng-model="vm.password">
+    </div>
+    <button class="login-button" ng-click="vm.login()">login</button>
+    <button class="login-button" ng-click="vm.clearSession()">clear</button>
+    <span class="error-msg">{{vm.errorMsg}}</span>
+</div>
