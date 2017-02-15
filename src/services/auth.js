@@ -7,7 +7,6 @@ function authService($http,APPCONFIG) {
     }
 
     service.authenticate = function (credentials) {
-        console.log(credentials)
         return $http.post(getUrl(),credentials).then(function (obj) {
             return obj.data;
         })

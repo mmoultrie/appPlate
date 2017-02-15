@@ -4,11 +4,37 @@
 html, body{
   height: 100%;
   width: 100%;
+  color: #333;
+}
+body{
+  font-family: $defaultFontFamily;
 }
 .content-container{
-  width: 85%;
+  width: 960px;
   margin: auto;
 }
 
+input{
+
+}
+
+button {
+  font-weight: 200;
+  transition: $defaultTransition;
+  font-size: 1em;
+  padding: .2em .3em;
+  border-radius: 2px;
+  color: #333;
+  background-color: white;
+  border: 1px solid $mainButtonBkgdClr;
+  text-align: center;
+
+
+  &:hover{
+    background-color: $mainButtonBkgdClr;
+    color: white;
+    border: 1px solid transparent;
+  }
+}
 @import "form";
 @import "login";

@@ -1,4 +1,6 @@
-function userController(UserService) {
+userController.$inject = ['UserService','$rootScope'];
+
+function userController(UserService, $rootScope) {
     var vm = this;
     UserService.all().then(function (list) {
         vm.users = list;
@@ -7,8 +9,8 @@ function userController(UserService) {
         console.log('clearing')
         localStorage.clear();
         UserService.setCurrentUser(null);
+        $rootScope.$broadcast('unauthorized')
     }
 }
 
-userController.$inject = ['UserService'];
 module.exports = userController;

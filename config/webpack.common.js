@@ -42,7 +42,7 @@ module.exports = {
             name: ['app','vendor']
         }),
         new HtmlWebpackPlugin({
-            template: helpers.root('public/index.html')
+            template: helpers.root('src/index.html')
         })
     ]
 };

@@ -1,13 +1,21 @@
 <div class="login-container" ng-controller="LoginController as vm">
-    <div class="form-control">
-        <label for="username">username</label>
-        <input id="username" type="text" ng-model="vm.username">
+    <div class="login-form">
+        <div class="control-container">
+            <div class="form-control">
+                <label for="username">email</label>
+                <input id="username" type="text" ng-model="vm.username">
+            </div>
+            <div class="form-control">
+                <label for="password">password</label>
+                <input id="password" type="text" ng-model="vm.password">
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="login-button" ng-click="vm.login()">login</button>
+            <!--<button class="login-button" ng-click="vm.clearSession()">clear</button>-->
+            username<br>{{vm.username}}<br>
+            model<br>{{vm}}
+        </div>
+        <span class="error-msg">{{vm.errorMsg}}</span>
     </div>
-    <div class="form-control">
-        <label for="password">password</label>
-        <input id="password" type="text" ng-model="vm.password">
-    </div>
-    <button class="login-button" ng-click="vm.login()">login</button>
-    <button class="login-button" ng-click="vm.clearSession()">clear</button>
-    <span class="error-msg">{{vm.errorMsg}}</span>
 </div>

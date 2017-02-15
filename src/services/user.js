@@ -23,8 +23,6 @@ function userService($http,APPCONFIG,$rootScope) {
         currentUser = user;
     };
 
-
-
     service.create = function (obj) {
         return $http.post(getUrl(), obj).then(function (response) {
             return response;

@@ -19,12 +19,21 @@ function states($stateProvider, $urlRouterProvider,$httpProvider) {
             url: '/users.create',
             template: require('./views/users.create.html')
         })
+        .state('home',{
+            url: '/home',
+            template: require('./views/home.html'),
+            controller: 'homeController',
+            controllerAs: 'vm'
+        })
     ;
 
     $httpProvider.interceptors.push('ApiInterceptor');
 
 }
-angular
-    .module('appPlate')
-    .config(states)
-;
+export default function () {
+
+    angular
+        .module('appPlate')
+        .config(states)
+    ;
+}

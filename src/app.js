@@ -1,25 +1,17 @@
+import  controllers from './controllers';
+import  directives from './directives';
+import  services from './services';
+import  states from './states';
+import run from './run'
+import  config from './config'
 
 angular
-    .module('appPlate',['ui.router'])
-    .run(runner)
-;
+    .module('appPlate',['ui.router']);
 
-function runner($rootScope,$state) {
-    $rootScope.$on('$locationChangeStart',function (e, n, c) {
-        var currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
-        if(c !== 'login'){
-            if(!currentUser.token){
-                $state.go('login')
-            }
-        }
-    });
-    $rootScope.$on('unauthorized',function () {
-        alert('Session has expired and you have been logged out');
-        $state.go('login')
-    });
-}
-
-require( './controllers');
-require( './services');
-require( './states');
-require('./config');
+// bootstrapping
+controllers();
+states();
+services();
+directives();
+run();
+config();
